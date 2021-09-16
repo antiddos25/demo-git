@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+        <%= h1_title %>
+    </h1>
+    <h2>
+        <%= h2_title %>
+    </h2>
+    <%
+    // Display data table by JavaS
+    
+    if(userData.rowCount == 0)
+    {
+        %>
+        <p> No data Found</p>
+        <%
+    }else
+    {
+        // Display header
+     %>
+     <style type="text/css">
+        table, th, td{
+            border:1px solid #868585;
+        }
+        table{
+            border-collapse:collapse;
+            width:100%;
+        }
+        th, td{
+            text-align:left;
+            padding:10px;
+        }
+        table tr:nth-child(odd){
+            background-color:#eee;
+        }
+        table tr:nth-child(even){
+            background-color:white;
+        }
+        table tr:nth-child(1){
+            background-color:rgb(209, 9, 126);
+        }
+    </style>
+            <table border="1">
+                <tr>
+                    <th>product_name</th>
+                    <th>price</th>
+                    <th>amount</th>
+                    <th>shop_name</th>
+                    <th>idproduct</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <%
+                // Display all rows , Object data : userData
+                //all rows: userData.rows, list array [...]
+                userData.rows.forEach(function(row) {
+                  //Display a row
+                  console.log(row);
+            %>
+                    <tr>
+                        <td>
+                            <%= row.product_name %>
+                        </td>
+                        <td>
+                            <%= row.price %>
+                        </td>
+                        <td>
+                            <%= row.anount %>
+                        </td>
+                        <td>
+                            <%= row.shop_name %>
+                        </td>
+                        <td>
+                            <%= row.idproduct %>
+                        </td>
+                        <td>
+                            <a href='users/Edit/<%=row.idproduct%>'>Edit</a>
+                        </td>
+                        <td>
+                            <a href='users/Delete/<%=row.idproduct%>'>Delete </a>
+                        </td>
+                    </tr>
+                    <%
+                      });
+                    %>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><a href='users/insert'>Insert</a> </td>
+                            <td></td>
+                        </tr>
+            </table>
+            <%
+                    }
+                     %>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel='stylesheet' href='/stylesheets/edit_form.css' />
+        <style> 
+            input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            }
+            </style>
+    </head>
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <div class="product_detail">
+        <form action='/users/insert' method="POST">
+            <label>Product name"</label>
+            <input type="text" placeholder="Enter Product ID" name="product_name">
+            <label> Product price"</label>
+            <input type="text" placeholder="Enter Product Name" name="price">
+            <label>Product amount</label>
+            <input type="text" placeholder="Enter Product Cost" name="anount">
+            <label>shop name</label>
+            <input type="text" placeholder="Enter Product Cost" name="shop_name">
+            <label>Product id</label>
+            <input type="text" placeholder="Enter Product Cost" name="idproduct">
+            <button type="Submit"> Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

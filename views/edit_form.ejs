@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/edit_form.css' />
+    <style> 
+        input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        }
+        </style>
+</head>
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+        <head>
+            <meta charset="utf-8">
+            <title>ATN Shop</title>
+            <link rel="stylesheet" type="text/css" href="edit_form.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        </head> 
+            <div class="product_detail">
+                <form action="<%'/users/edit' +edit_data.idproduct %> " method="POST">
+                    <label>Product name"</label>
+                    <input type="text" placeholder="Enter Product Name" name="product_name" required value="<%= edit_data.product_name %>">
+                    <label>Product price</label>
+                    <input type="text" placeholder="Enter Product ID" name="price" required value="<%= edit_data.price %>">
+                    <label>Product amount</label>
+                    <input type="text" placeholder="Enter Product Cost" name="anount" required value="<%= edit_data.anount %>">
+                    <label>shop name</label>
+                    <input type="text" placeholder="Enter Product Cost" name="shop_name" required value="<%= edit_data.shop_name %>">
+                    <label>Product id</label>
+                    <input type="text" placeholder="Enter Product Cost" name="idproduct" required value="<%= edit_data.idproduct %>">
+                    <button type="Submit">Submit</button>
+                </form>
+            </div>
+    </h1>
+    <div class="gradient7"></div>
+</body>
+
+</html>

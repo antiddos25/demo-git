@@ -1,0 +1,13 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+background-image: linear-gradient(
+              to right,
+              #1ABCF4,
+              #5DEFB8
+            );
